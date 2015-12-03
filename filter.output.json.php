@@ -1,0 +1,4 @@
+<?php
+
+$rootComment = "[]";
+$allComment = "[]";
