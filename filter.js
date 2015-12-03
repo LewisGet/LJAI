@@ -109,4 +109,25 @@ ljAi.messages.init = function () {
     ljAi.messages.initRootComment();
 };
 
+/**
+ * 若直接將物件 json encode php 會爆掉，因此特設此 function 處理過大物件
+ */
+ljAi.messages.output = function (type) {
+    var comments = ljAi.messages.rootCommentList
+
+    if ("all" == type)
+    {
+        comments = ljAi.messages.commentList;
+    }
+
+    var outputString = "";
+
+    for (var index = 0; index < comments.length; index++)
+    {
+        outputString += "$rootComment[] = <<<JSON\n" + JSON.stringify(comments[index]) + "\nJSON;\n\n";
+    }
+
+    console.log(outputString);
+};
+
 ljAi.messages.init();
