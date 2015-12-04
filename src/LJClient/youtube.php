@@ -4,13 +4,10 @@ namespace LJClient;
 
 class Youtube
 {
-    public function execute()
-    {
-        return ;
-    }
+    public $id;
 
-    public function messageJS($message)
+    public function execute($message)
     {
-        return ;
+        return 'var window.reply_' . $this->id . ' = "' . $message . '";';
     }
 }

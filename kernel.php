@@ -10,9 +10,15 @@ class Kerenl
     {
         $ai = new LJAI\Match();
         $route = new LJAI\Router();
+        $jsCode = new LJClient\Youtube();
 
         $comment = $route->getCommentBundle();
+        $reply = $ai->match($comment);
 
-        return $ai->match($comment);
+        $jsCode->id = $route->id;
+
+        $js = $jsCode->execute($reply);
+
+        return $js;
     }
 }
