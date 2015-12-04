@@ -9,6 +9,15 @@ class Match
     public $message = "";
 
     public $mapping = array(
+        'moreMinecraft' => array(
+            'have' => '多出點 and Minecraft|多出點 and 麥快|多出點 and 賣塊|多出點 and 創世神|多出點 and 我的世界|在拍 and Minecraft|在拍 and 麥快|在拍 and 賣塊|在拍 and 創世神|在拍 and 我的世界|多出 and Minecraft|多出 and 麥快|多出 and 賣塊|多出 and 創世神|多出 and 我的世界|再出 and Minecraft|再出 and 麥快|再出 and 賣塊|再出 and 創世神|再出 and 我的世界|請出 and Minecraft|請出 and 麥快|請出 and 賣塊|請出 and 創世神|請出 and 我的世界|在出 and Minecraft|在出 and 麥快|在出 and 賣塊|在出 and 創世神|在出 and 我的世界|多拍 and Minecraft|多拍 and 麥快|多拍 and 賣塊|多拍 and 創世神|多拍 and 我的世界',
+            'reply' => array(
+                '謝謝你喜歡我們出 Minecraft 影片！可惜我們這次是出 {game} 的影片。我們會努力多出點的！',
+                '感謝你這麼喜歡我們實況的 Minecraft 影片！我們會努力多出點的！',
+                '好喔！我們會努力多出點 Minecraft 影片的！'
+            )
+        ),
+
         'more' => array(
             'have' => '可以 and 在拍|可以 and 多拍|多拍點|多出點',
             'reply' => array(
@@ -45,11 +54,11 @@ class Match
             'without' => '',
             'reply' => array(
                 '這是 {game} {videoType} 哦！',
-                '謝謝你喜歡這， {game} 影片，這是 {game} {videoType} 喔！ : )'
+                '謝謝你喜歡這  {game} 影片，這是 {game} {videoType} 喔！ : )'
             )
         ),
         'funny' => array(
-            'have' => '我笑出來|肚子 and 痛|喜歡|很好看|好看|好玩|笑到|搞笑|訂閱|期待|支持 and 你|支持 and 妳|笑死|笑屎|好笑|有趣|永遠|訂閱|订阅|也蠻厲|蠻厲|超神|一個讚',
+            'have' => '我笑出來|肚子 and 痛|喜歡|很好看|好看|好玩|笑到|搞笑|訂閱|期待|支持 and 你|支持 and 妳|笑死|笑屎|好笑|有趣|永遠|訂閱|订阅|也蠻厲|蠻厲|超神|一個讚|讚啦',
             'without' => '不喜歡|討厭|很煩', //隨回應增加
             'reply' => array(
                 '太太太感謝妳支持啦！也謝謝你喜歡這 {game} 影片！ : )',
@@ -73,6 +82,10 @@ class Match
         'Don\'t starve' => 'starve|饑荒|饥荒',
         'Payday' => 'Payday|payday|劫薪日',
         '瑪奇英雄傳' => '瑪奇英雄傳|瑪英|馬英'
+    );
+
+    public $gameTypeMapping = array(
+        
     );
 
     public function match($comment)
