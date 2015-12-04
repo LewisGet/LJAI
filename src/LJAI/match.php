@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/filter.output.json.php";
+namespace LJAI;
 
-class LJAI
+class Match
 {
     public $rootComment;
     public $mapping = array(
@@ -38,7 +38,7 @@ class LJAI
             )
         ),
         'whatModOrMap' => array(
-            'have' => '是什麼 and 模組|叫什麼 and 模組|是什麼 and 地圖|叫什麼 and 地圖|模組|地圖',
+            'have' => '是什麼 and 模組|叫什麼 and 模組|是什麼 and 地圖|叫什麼 and 地圖|模組|地圖|甚麼 and 模組',
             'without' => '',
             'reply' => array(
                 '這是 {game} {videoType} 哦！',
@@ -115,10 +115,10 @@ class LJAI
         // 都沒吻合
         return "not found!";
     }
-    
+
     /**
-     * 是否含有
-     */
+        * 是否含有
+        */
     public function have($string, $value)
     {
         return (strpos($string, $value) !== false);
@@ -128,16 +128,4 @@ class LJAI
     {
         return ! ($this->have($string, $value));
     }
-}
-
-$ljAi = new LJAI();
-
-// 整理輸入資訊
-foreach ($rootComment as $key => $comment)
-{
-    $comment = json_decode($comment);
-    $rootComment[$key] = $comment;
-
-    echo $comment->commentMessage . "\n";
-    echo " => " . $ljAi->match($comment) . "\n";
 }

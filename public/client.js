@@ -1,0 +1,123 @@
+/**
+ * Coding By Lewis.AEdes@gmail.com, LewisFlyBug@gmail.com
+ */
+
+var ljComment = {
+    serverURI: "http://127.0.0.1:8000",
+    youtubeUI: {
+        commentInputId: "ytcb-text",
+        commentInputBoxId: "ytcb-root",
+        commentSendButtonId: "ytcb-reply",
+        commentVideoClass: "thumb-title",
+        commentContentClass: "comment-text",
+        commentByAttr: "data-name",
+        commentBundleClass: "comment-item yt-commentbox-top",
+        commentReplyButtonClass: "comment-footer-action yt-commentbox-show-reply"
+    },
+    ljUI: {
+        replyId: "ljReplyJs",
+        styleId: "ljStyle",
+        autoCreatePrefix: "reply_"
+    }
+};
+
+/**
+ * include style
+ */
+ljComment.ljUI.addStyle = function () {
+    var link = document.createElement("link");
+
+    link.setAttribute("id", ljComment.ljUI.styleId);
+    link.setAttribute("rel", "stylesheet");
+    link.setAttribute("href", ljComment.serverURI + "/style.css");
+
+    document.body.appendChild(link);
+};
+
+/**
+ * add reply script element
+ */
+ljComment.ljUI.addScript = function () {
+    var script = document.createElement("script");
+
+    script.setAttribute("id", ljComment.ljUI.replyId);
+    script.setAttribute("type", "text/javascript");
+
+    document.body.appendChild(script);
+};
+
+/**
+ * load reply
+ *
+ * @param name
+ * @param video
+ * @param message
+ */
+ljComment.ljUI.loadReply = function (id, name, video, message) {
+    var script = document.getElementById(ljComment.ljUI.replyId);
+
+    script.setAttribute("src", ljComment.serverURI + "/app.php?id=" + id + "&name=" + name + "&video=" + video + "&message=" + message);
+};
+
+/**
+ * add event
+ */
+ljComment.ljUI.addEvent = function () {
+    var commentList =  document.getElementsByClassName(ljComment.youtubeUI.commentBundleClass);
+
+    for (var index = 0; index < commentList.length; index++)
+    {
+        var comment = commentList[index];
+
+        ljComment.ljUI.openReplyBox(comment);
+        ljComment.ljUI.addAutoReplyBox(comment, index);
+
+        var name = comment.getAttribute(ljComment.youtubeUI.commentByAttr);
+        var video = (comment.getElementsByClassName(ljComment.youtubeUI.commentVideoClass)[0] || {innerText: ""}).innerText;
+        var message = (comment.getElementsByClassName(ljComment.youtubeUI.commentContentClass)[0] || {innerText: ""}).innerText;
+
+        ljComment.ljUI.loadReply(index, name, video, message);
+    }
+};
+
+/**
+ * open reply box
+ *
+ * @param dom
+ */
+ljComment.ljUI.openReplyBox = function (dom) {
+    dom.onmouseover = function () {
+        var button = this.getElementsByClassName(ljComment.youtubeUI.commentReplyButtonClass)[0];
+
+        if (button)
+        {
+            button.click();
+        }
+    }
+};
+
+ljComment.ljUI.addAutoReplyBox = function (dom, id) {
+    var reply = document.createElement("div");
+
+    reply.id = ljComment.ljUI.autoCreatePrefix + id.toString();
+    reply.setAttribute("data-auto-id", id);
+
+    /**
+     * click use this reply
+     */
+    reply.onclick = function () {
+        var input = document.getElementById(ljComment.youtubeUI.commentInputId);
+
+        input.innerHTML += this.innerText;
+    };
+
+    dom.appendChild(reply);
+};
+
+ljComment.init = function () {
+    ljComment.ljUI.addStyle();
+    ljComment.ljUI.addScript();
+    ljComment.ljUI.addEvent();
+};
+
+ljComment.init();
