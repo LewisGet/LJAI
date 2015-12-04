@@ -15,7 +15,6 @@ var ljComment = {
         commentReplyButtonClass: "comment-footer-action yt-commentbox-show-reply"
     },
     ljUI: {
-        replyId: "ljReplyJs",
         styleId: "ljStyle",
         autoCreatePrefix: "reply_"
     }
@@ -35,18 +34,6 @@ ljComment.ljUI.addStyle = function () {
 };
 
 /**
- * add reply script element
- */
-ljComment.ljUI.addScript = function () {
-    var script = document.createElement("script");
-
-    script.setAttribute("id", ljComment.ljUI.replyId);
-    script.setAttribute("type", "text/javascript");
-
-    document.body.appendChild(script);
-};
-
-/**
  * load reply
  *
  * @param name
@@ -54,7 +41,11 @@ ljComment.ljUI.addScript = function () {
  * @param message
  */
 ljComment.ljUI.loadReply = function (id, name, video, message) {
-    var script = document.getElementById(ljComment.ljUI.replyId);
+    var script = document.createElement("script");
+
+    script.setAttribute("type", "text/javascript");
+
+    document.body.appendChild(script);
 
     script.setAttribute("src", ljComment.serverURI + "/app.php?id=" + id + "&name=" + name + "&video=" + video + "&message=" + message);
 };
@@ -116,7 +107,6 @@ ljComment.ljUI.addAutoReplyBox = function (dom, id) {
 
 ljComment.init = function () {
     ljComment.ljUI.addStyle();
-    ljComment.ljUI.addScript();
     ljComment.ljUI.addEvent();
 };
 

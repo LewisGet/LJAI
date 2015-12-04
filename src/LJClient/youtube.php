@@ -8,6 +8,6 @@ class Youtube
 
     public function execute($message)
     {
-        return 'var window.reply_' . $this->id . ' = "' . $message . '";';
+        return 'window.reply_' . $this->id . '.innerHTML = "' . $message . '";';
     }
 }
