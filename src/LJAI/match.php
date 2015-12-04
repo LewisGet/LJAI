@@ -76,6 +76,21 @@ class Match
             'reply' => array(
                 '謝謝！大家也要記得保暖喔！ : )'
             )
+        ),
+        'birthday' => array(
+            'have' => '我 and 生日|也 and 生日',
+            'reply' => array(
+                '生日快樂阿阿阿阿阿！ : )',
+                '生日快樂！ : )'
+            )
+        ),
+        'faster' => array(
+            'have' => '趕快 and 出新|趕快 and 更新|趕快 and 上傳|趕快 and 拍|感快 and 出新|感快 and 更新|感快 and 上傳|感快 and 拍|敢快 and 出新|敢快 and 更新|敢快 and 上傳|敢快 and 拍|快點 and 出新|快點 and 更新|快點 and 上傳|快點 and 拍|馬上 and 出新|馬上 and 更新|馬上 and 上傳|馬上 and 拍',
+            'reply' => array(
+                '謝謝你喜歡我們的 {game}影片，我們會盡快出新的喔！',
+                '謝謝你喜歡我們的 {game}影片，我會盡量剪快點的！ : )',
+                '我會盡量剪快點的！ : ) 多出些 {game} 影片的！',
+            )
         )
         // 未上完
     );
