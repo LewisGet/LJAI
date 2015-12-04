@@ -53,8 +53,7 @@ class Match
             'have' => '是什麼 and 模組|叫什麼 and 模組|是什麼 and 地圖|叫什麼 and 地圖|模組|地圖|甚麼 and 模組',
             'without' => '',
             'reply' => array(
-                '這是 {game} {videoType} 哦！',
-                '謝謝你喜歡這  {game} 影片，這是 {game} {videoType} 喔！ : )'
+                '{gameType}'
             )
         ),
         'funny' => array(
@@ -85,7 +84,9 @@ class Match
     );
 
     public $gameTypeMapping = array(
-        
+        "世界只有鑽石|的鑽石都變木頭，放火後？" => "這是 {game} 生存試煉II 地圖，網址在 http://forum.gamer.com.tw/C.php?bsn=18673&snA=125464&tnum=51&subbsn=15 喔！",
+        "Minecraft and 第 and 開" => "這是 {game} Lucky block 模組喔！網址在 http://www.minecraftmods.com/lucky-block-mod/",
+        "如何用岩漿生出雞" => "這 {game} 影片，太久以前拍的了！抱歉忘記是什麼 {game} 模組了。"
     );
 
     public function match($comment)
@@ -138,6 +139,7 @@ class Match
 
                     $reply = $mapping['reply'][$replyNumber];
 
+                    $reply = $this->putGameTypeOnReplyMessage($reply);
                     $reply = $this->putGameOnReplyMessage($reply);
 
                     return $reply;
@@ -152,6 +154,11 @@ class Match
     public function putGameOnReplyMessage($message)
     {
         return str_replace("{game}", $this->getGameName($this->video), $message);
+    }
+
+    public function putGameTypeOnReplyMessage($message)
+    {
+        return str_replace("{gameType}", $this->getGameType(), $message);
     }
 
     public function getGameName($value)
@@ -170,6 +177,35 @@ class Match
         }
 
         return "not found game name!";
+    }
+
+    public function getGameType()
+    {
+        foreach ($this->gameTypeMapping as $videoKeyWords => $reply)
+        {
+            $videoKeyWords = explode("|", $videoKeyWords);
+
+            foreach ($videoKeyWords as $videoKeyWord)
+            {
+                $allow = true;
+                $videoKeyWord = explode(" and ", $videoKeyWord);
+
+                foreach ($videoKeyWord as $needPart)
+                {
+                    if ($this->notHave($this->video, $needPart))
+                    {
+                        $allow = false;
+                    }
+                }
+
+                if ($allow)
+                {
+                    return $reply;
+                }
+            }
+        }
+
+        return "not found!";
     }
 
     /**
