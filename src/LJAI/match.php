@@ -81,7 +81,7 @@ class Match
                 // 所有須出現字
                 foreach ($allNeedToHave as $needWord)
                 {
-                    if ($this->notHave($comment->commentMessage, $needWord))
+                    if ($this->notHave($comment->message, $needWord))
                     {
                         // 如果有一個 and 後的不成立，這組關鍵字就不和
                         $allAllow = false;
@@ -95,7 +95,7 @@ class Match
                         continue;
                     }
                     
-                    if ($this->have($comment->commentMessage, $without))
+                    if ($this->have($comment->message, $without))
                     {
                         $allAllow = false;
                     }
