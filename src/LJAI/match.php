@@ -10,7 +10,7 @@ class Match
 
     public $mapping = array(
         'moreMinecraft' => array(
-            'have' => '多出點 and Minecraft|多出點 and 麥快|多出點 and 賣塊|多出點 and 創世神|多出點 and 我的世界|在拍 and Minecraft|在拍 and 麥快|在拍 and 賣塊|在拍 and 創世神|在拍 and 我的世界|多出 and Minecraft|多出 and 麥快|多出 and 賣塊|多出 and 創世神|多出 and 我的世界|再出 and Minecraft|再出 and 麥快|再出 and 賣塊|再出 and 創世神|再出 and 我的世界|請出 and Minecraft|請出 and 麥快|請出 and 賣塊|請出 and 創世神|請出 and 我的世界|在出 and Minecraft|在出 and 麥快|在出 and 賣塊|在出 and 創世神|在出 and 我的世界|多拍 and Minecraft|多拍 and 麥快|多拍 and 賣塊|多拍 and 創世神|多拍 and 我的世界',
+            'have' => '几时出 and Minecraft|几时出 and minecraft|几时出 and 麥快|几时出 and 賣塊|几时出 and 麥塊|好久沒 and Minecraft|好久沒 and minecraft|好久沒 and 麥快|好久沒 and 賣塊|好久沒 and 麥塊|多出點 and Minecraft|多出點 and 麥快|多出點 and 賣塊|多出點 and 創世神|多出點 and 我的世界|在拍 and Minecraft|在拍 and 麥快|在拍 and 賣塊|在拍 and 創世神|在拍 and 我的世界|多出 and Minecraft|多出 and 麥快|多出 and 賣塊|多出 and 創世神|多出 and 我的世界|再出 and Minecraft|再出 and 麥快|再出 and 賣塊|再出 and 創世神|再出 and 我的世界|請出 and Minecraft|請出 and 麥快|請出 and 賣塊|請出 and 創世神|請出 and 我的世界|在出 and Minecraft|在出 and 麥快|在出 and 賣塊|在出 and 創世神|在出 and 我的世界|多拍 and Minecraft|多拍 and 麥快|多拍 and 賣塊|多拍 and 創世神|多拍 and 我的世界',
             'reply' => array(
                 '謝謝你喜歡我們出 Minecraft 影片！可惜我們這次是出 {game} 的影片。我們會努力多出點的！',
                 '感謝你這麼喜歡我們實況的 Minecraft 影片！我們會努力多出點的！',
@@ -27,7 +27,7 @@ class Match
         
         // 解釋遊戲元素留言
         'because' => array (
-            'have' => '因為|所以|因为|所以',
+            'have' => '因為|所以|因为|所以|你可以用',
             'without' => '',
             'reply' => array(
                 '原來是這樣啊！',
@@ -77,7 +77,7 @@ class Match
             )
         ),
         'faster' => array(
-            'have' => '趕快 and 出新|趕快 and 更新|趕快 and 上傳|趕快 and 拍|感快 and 出新|感快 and 更新|感快 and 上傳|感快 and 拍|敢快 and 出新|敢快 and 更新|敢快 and 上傳|敢快 and 拍|快點 and 出新|快點 and 更新|快點 and 上傳|快點 and 拍|馬上 and 出新|馬上 and 更新|馬上 and 上傳|馬上 and 拍',
+            'have' => '趕快 and 出新|趕快 and 更新|趕快 and 上傳|趕快 and 拍|感快 and 出新|感快 and 更新|感快 and 上傳|感快 and 拍|敢快 and 出新|敢快 and 更新|敢快 and 上傳|敢快 and 拍|快點 and 出新|快點 and 更新|快點 and 上傳|快點 and 拍|馬上 and 出新|馬上 and 更新|馬上 and 上傳|馬上 and 拍|快点 and 更新|快点 and 出影片|早点 and 更新|早点 and 出影片',
             'reply' => array(
                 '謝謝你喜歡我們的 {game}影片，我們會盡快出新的喔！',
                 '謝謝你喜歡我們的 {game}影片，我會盡量剪快點的！ : )',
@@ -91,11 +91,18 @@ class Match
                 '這 {game} 影片的音樂可以在內 lj.dsa.tw/qna.html 找找喔！ : )',
             )
         ),
+        'lol' => array(
+            'have' => '有玩 and 英雄聯盟|有玩 and lol|有打 and 英雄聯盟|有打 and lol',
+            'reply' => array(
+                '沒有喔！我沒有打 lol : )',
+                '沒耶，我沒玩英雄聯盟'
+            )
+        ),
         // 擴充位置
 
         // 感謝支持墊底驗證
         'funny' => array(
-            'have' => '我笑出來|肚子 and 痛|喜歡|很好看|好看|好玩|笑到|搞笑|訂閱|期待|支持 and 你|支持 and 妳|笑死|笑屎|好笑|有趣|永遠|訂閱|订阅|也蠻厲|蠻厲|超神|一個讚|讚啦|繼續拍',
+            'have' => '我笑出來|肚子 and 痛|喜歡|很好看|好看|好玩|笑到|搞笑|訂閱|期待|支持 and 你|支持 and 妳|笑死|笑屎|好笑|有趣|永遠|訂閱|订阅|也蠻厲|蠻厲|超神|一個讚|讚啦|繼續拍|恭喜|忠實粉絲|你的 and 粉絲|太好看了',
             'without' => '不喜歡|討厭|很煩', //隨回應增加
             'reply' => array(
                 '太太太感謝妳支持啦！也謝謝你喜歡這 {game} 影片！ : )',
