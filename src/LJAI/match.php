@@ -4,7 +4,10 @@ namespace LJAI;
 
 class Match
 {
-    public $rootComment;
+    public $name = "";
+    public $video = "";
+    public $message = "";
+
     public $mapping = array(
         'more' => array(
             'have' => '可以 and 在拍|可以 and 多拍|多拍點|多出點',
@@ -63,8 +66,21 @@ class Match
         // 未上完
     );
 
+    public $gameMapping = array(
+        'GTA v' => 'GTA|gta|Gta|gTa',
+        'Gmod' => 'Gmod|gmod|Garry|garry',
+        'Minecraft' => 'Minecraft|minecraft|我的世界|當個創世神|我的世界|当个创世神',
+        'Don\'t starve' => 'starve|饑荒|饥荒',
+        'Payday' => 'Payday|payday|劫薪日',
+        '瑪奇英雄傳' => '瑪奇英雄傳|瑪英|馬英'
+    );
+
     public function match($comment)
     {
+        $this->name = $comment->name;
+        $this->video = $comment->video;
+        $this->message = $comment->message;
+
         // 所有留言類型
         foreach ($this->mapping as $mapping)
         {
@@ -81,7 +97,7 @@ class Match
                 // 所有須出現字
                 foreach ($allNeedToHave as $needWord)
                 {
-                    if ($this->notHave($comment->message, $needWord))
+                    if ($this->notHave($this->message, $needWord))
                     {
                         // 如果有一個 and 後的不成立，這組關鍵字就不和
                         $allAllow = false;
@@ -95,7 +111,7 @@ class Match
                         continue;
                     }
                     
-                    if ($this->have($comment->message, $without))
+                    if ($this->have($this->message, $without))
                     {
                         $allAllow = false;
                     }
@@ -107,13 +123,40 @@ class Match
                     // 隨機選個回應, 由 0 到 最後一個留言
                     $replyNumber = rand(1, sizeof($mapping['reply'])) - 1;
 
-                    return $mapping['reply'][$replyNumber];
+                    $reply = $mapping['reply'][$replyNumber];
+
+                    $reply = $this->putGameOnReplyMessage($reply);
+
+                    return $reply;
                 }
             }
         }
         
         // 都沒吻合
         return "not found!";
+    }
+
+    public function putGameOnReplyMessage($message)
+    {
+        return str_replace("{game}", $this->getGameName($this->video), $message);
+    }
+
+    public function getGameName($value)
+    {
+        foreach ($this->gameMapping as $gameName => $keywords)
+        {
+            $keywords = explode("|", $keywords);
+
+            foreach ($keywords as $keyword)
+            {
+                if ($this->have($value, $keyword))
+                {
+                    return $gameName;
+                }
+            }
+        }
+
+        return "not found game name!";
     }
 
     /**
