@@ -71,6 +71,12 @@ class Match
                 '哈哈哈，對阿。因為在拍 {game} 影片時，沒有 釋迦有授權的圖片，所以就放個榴槤 XD'
             )
         ),
+        'sick' => array(
+            'have' => '早日康復|記得保暖',
+            'reply' => array(
+                '謝謝！大家也要記得保暖喔！ : )'
+            )
+        )
         // 未上完
     );
 
@@ -80,7 +86,9 @@ class Match
         'Minecraft' => 'Minecraft|minecraft|我的世界|當個創世神|我的世界|当个创世神',
         'Don\'t starve' => 'starve|饑荒|饥荒',
         'Payday' => 'Payday|payday|劫薪日',
-        '瑪奇英雄傳' => '瑪奇英雄傳|瑪英|馬英'
+        '瑪奇英雄傳' => '瑪奇英雄傳|瑪英|馬英',
+        '詭異音樂' => '【阿飄崩壞】飄笨|Minecraft funny moment chicken remix song|一分鐘回兩千則留言的方法。',
+        '愚人節' => '愚人節'
     );
 
     public $gameTypeMapping = array(
