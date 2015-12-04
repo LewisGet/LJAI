@@ -33,13 +33,15 @@
 </head>
 <body>
     <div class="row" id="inputBox">
-        <input class="col-xs-6" id="aWord" value="" />
-        <input class="col-xs-6" id="bWord" value="" />
+        <input class="col-xs-4" id="aWord" value="" />
+        <input class="col-xs-4" id="bWord" value="" />
+        <input class="col-xs-4" id="lineDisplay" value="" />
     </div>
     <textarea id="display"></textarea>
     <script>
         var execute = function () {
             window.display.value = "";
+            window.lineDisplay.value = "";
 
             var allAWord = window.aWord.value.split(",");
             var allBWord = window.bWord.value.split(",");
@@ -63,6 +65,7 @@
                     }
 
                     window.display.value += nowWordA + " and " + allBWord[indexB] + "\n";
+                    window.lineDisplay.value += nowWordA + " and " + allBWord[indexB] + "|";
                 }
             }
         };
