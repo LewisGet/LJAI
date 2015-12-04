@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <style>
+        html, body
+        {
+            height: 100%;
+        }
+
+        #inputBox
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        #display
+        {
+            margin-top: 30px;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="row" id="inputBox">
+        <input class="col-xs-6" id="aWord" value="" />
+        <input class="col-xs-6" id="bWord" value="" />
+    </div>
+    <textarea id="display"></textarea>
+    <script>
+        var execute = function () {
+            window.display.value = "";
+
+            var allAWord = window.aWord.value.split(",");
+            var allBWord = window.bWord.value.split(",");
+
+            for (var indexA = 0; indexA < allAWord.length; indexA++)
+            {
+                var nowWordA = allAWord[indexA];
+
+                if (! nowWordA)
+                {
+                    continue;
+                }
+
+                for (var indexB = 0; indexB < allBWord.length; indexB++)
+                {
+                    var nowWordB = allBWord[indexB];
+
+                    if (! nowWordB)
+                    {
+                        continue;
+                    }
+
+                    window.display.value += nowWordA + " and " + allBWord[indexB] + "\n";
+                }
+            }
+        };
+
+        window.aWord.onkeyup = function () {
+            execute();
+        };
+
+        window.bWord.onkeyup = function () {
+            execute();
+        };
+    </script>
+</body>
+</html>
