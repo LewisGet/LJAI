@@ -54,7 +54,7 @@ class Match
             'have' => '是什麼 and 模組|叫什麼 and 模組|是什麼 and 地圖|叫什麼 and 地圖|模組|地圖|甚麼 and 模組',
             'without' => '',
             'reply' => array(
-                '{gameType}'
+                '{videoGame}'
             )
         ),
         'shakya' => array(
@@ -179,8 +179,7 @@ class Match
 
                     $reply = $mapping['reply'][$replyNumber];
 
-                    $reply = $this->putGameTypeOnReplyMessage($reply);
-                    $reply = $this->putGameOnReplyMessage($reply);
+                    $reply = $this->putMethodsWord($reply);
 
                     return $reply;
                 }
@@ -191,17 +190,13 @@ class Match
         return "not found!";
     }
 
-    public function putGameOnReplyMessage($message)
+    public function putMethodsWord($message)
     {
-        // that user comment game name
+        $message = str_replace("{game}", $this->getGameName($this->video), $message);
         $message = str_replace("{userGame}", $this->getGameName($this->video), $message);
+        $message = str_replace("{videoGame}", $this->getGameType($this->video), $message);
 
-        return str_replace("{game}", $this->getGameName($this->video), $message);
-    }
-
-    public function putGameTypeOnReplyMessage($message)
-    {
-        return str_replace("{gameType}", $this->getGameType(), $message);
+        return $message;
     }
 
     public function getGameName($value)
@@ -222,7 +217,7 @@ class Match
         return "not found game name!";
     }
 
-    public function getGameType()
+    public function getGameType($string)
     {
         foreach ($this->gameTypeMapping as $videoKeyWords => $reply)
         {
@@ -235,7 +230,7 @@ class Match
 
                 foreach ($videoKeyWord as $needPart)
                 {
-                    if ($this->notHave($this->video, $needPart))
+                    if ($this->notHave($string, $needPart))
                     {
                         $allow = false;
                     }
