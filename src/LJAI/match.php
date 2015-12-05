@@ -193,6 +193,9 @@ class Match
 
     public function putGameOnReplyMessage($message)
     {
+        // that user comment game name
+        $message = str_replace("{userGame}", $this->getGameName($this->video), $message);
+
         return str_replace("{game}", $this->getGameName($this->video), $message);
     }
 
