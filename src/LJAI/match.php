@@ -24,10 +24,21 @@ class Match
                 '謝謝你喜歡這 {game} 影片，我們會多出點喔！感謝支持！'
             )
         ),
-        
+        /*
+        'goToPlay' => array(
+            'have' => ''
+        ),
+        */
+        'join' => array(
+            'have' => '我 and 加入|我 and 一起玩',
+            'reply' => array(
+                '抱歉喔，我們目前沒有再公開招生。不好意思。不過謝謝你喜歡我們的遊戲影片 : )'
+            )
+        ),
+
         // 解釋遊戲元素留言
         'because' => array (
-            'have' => '因為|所以|因为|所以|你可以用',
+            'have' => '因為|所以|因为|所以|你可以用|上有苦力帕|草地是 and 屍|空氣 and 女巫',
             'without' => '',
             'reply' => array(
                 '原來是這樣啊！',
@@ -51,7 +62,7 @@ class Match
             )
         ),
         'whatModOrMap' => array(
-            'have' => '是什麼 and 模組|叫什麼 and 模組|是什麼 and 地圖|叫什麼 and 地圖|模組|地圖|甚麼 and 模組',
+            'have' => '是什麼 and 模組|叫什麼 and 模組|是什麼 and 地圖|叫什麼 and 地圖|模組|地圖|甚麼 and 模組|鑽石 and 下載',
             'without' => '',
             'reply' => array(
                 '{videoGame}'
@@ -77,7 +88,7 @@ class Match
             )
         ),
         'faster' => array(
-            'have' => '趕快 and 出新|趕快 and 更新|趕快 and 上傳|趕快 and 拍|感快 and 出新|感快 and 更新|感快 and 上傳|感快 and 拍|敢快 and 出新|敢快 and 更新|敢快 and 上傳|敢快 and 拍|快點 and 出新|快點 and 更新|快點 and 上傳|快點 and 拍|馬上 and 出新|馬上 and 更新|馬上 and 上傳|馬上 and 拍|快点 and 更新|快点 and 出影片|早点 and 更新|早点 and 出影片',
+            'have' => '還沒 and 出 and 片|趕快 and 出新|趕快 and 更新|趕快 and 上傳|趕快 and 拍|感快 and 出新|感快 and 更新|感快 and 上傳|感快 and 拍|敢快 and 出新|敢快 and 更新|敢快 and 上傳|敢快 and 拍|快點 and 出新|快點 and 更新|快點 and 上傳|快點 and 拍|馬上 and 出新|馬上 and 更新|馬上 and 上傳|馬上 and 拍|快点 and 更新|快点 and 出影片|早点 and 更新|早点 and 出影片',
             'reply' => array(
                 '謝謝你喜歡我們的 {game}影片，我們會盡快出新的喔！',
                 '謝謝你喜歡我們的 {game}影片，我會盡量剪快點的！ : )',
@@ -102,7 +113,7 @@ class Match
 
         // 感謝支持墊底驗證
         'funny' => array(
-            'have' => '我笑出來|肚子 and 痛|喜歡|很好看|好看|好玩|笑到|搞笑|訂閱|期待|支持 and 你|支持 and 妳|笑死|笑屎|好笑|有趣|永遠|訂閱|订阅|也蠻厲|蠻厲|超神|一個讚|讚啦|繼續拍|恭喜|忠實粉絲|你的 and 粉絲|太好看了',
+            'have' => '我笑出來|肚子 and 痛|喜歡|很好看|好看|好玩|笑到|搞笑|訂閱|期待|支持 and 你|支持 and 妳|笑死|笑屎|好笑|有趣|永遠|訂閱|订阅|也蠻厲|蠻厲|超神|一個讚|讚啦|繼續拍|恭喜|忠實粉絲|你的 and 粉絲|太好看了|太棒了|哈哈哈',
             'without' => '不喜歡|討厭|很煩', //隨回應增加
             'reply' => array(
                 '太太太感謝妳支持啦！也謝謝你喜歡這 {game} 影片！ : )',
