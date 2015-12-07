@@ -203,9 +203,9 @@ class Match
 
     public function putMethodsWord($message)
     {
-        $message = str_replace("{game}", $this->getGameName($this->video), $message);
-        $message = str_replace("{userGame}", $this->getGameName($this->video), $message);
         $message = str_replace("{videoGame}", $this->getGameType($this->video), $message);
+        $message = str_replace("{userGame}", $this->getGameName($this->video), $message);
+        $message = str_replace("{game}", $this->getGameName($this->video), $message);
 
         return $message;
     }
