@@ -18,8 +18,15 @@ class Match
             )
         ),
 
+        'isTaiwan' => array(
+            'have' => '台湾 and 吗',
+            'reply' => array(
+                '是喔！我們是台灣人 : )'
+            )
+        ),
+
         'more' => array(
-            'have' => '可以 and 在拍|可以 and 多拍|多拍點|多出點',
+            'have' => '可以 and 多點|放 and 多點|可以 and 在拍|可以 and 多拍|多拍點|多出點',
             'reply' => array(
                 '謝謝你喜歡這 {game} 影片，我們會多出點喔！感謝支持！'
             )
@@ -36,10 +43,18 @@ class Match
             )
         ),
 
+        // 糾正
+        'youAreWrong' => array(
+            'have' => '打錯了 and 不是',
+            'reply' => array(
+                '真的耶！在做這 {game} 影片時，我都沒發現！'
+            )
+        ),
+
         // 解釋遊戲元素留言
         'because' => array (
-            'have' => '因為|所以|因为|所以|你可以用|上有苦力帕|草地是 and 屍|空氣 and 女巫',
-            'without' => '',
+            'have' => '因為|所以|因为|所以|你可以用|上有苦力帕|草地是 and 屍|空氣 and 女巫|這不是|草地是 and 尸|空气是 and 巫师',
+            'without' => '好看|完整|可以',
             'reply' => array(
                 '原來是這樣啊！',
                 '哦！原來是這樣啊！難怪！',
@@ -47,14 +62,14 @@ class Match
             )
         ),
         'what' => array(
-            'have' => '是什麼 and 作影片|是什麼 and 做影片|是什麼 and 坐影片|是什麼 and 剪影片|是什麼 and 減影片|是什麼 and 出影片|是什麼 and 錄影片|是什麼 and 錄影|是什麼 and 錄音|是什麼 and 實況|是什麼 and 石礦|是什麼 and 時況|什麼 and 作影片|什麼 and 做影片|什麼 and 坐影片|什麼 and 剪影片|什麼 and 減影片|什麼 and 出影片|什麼 and 錄影片|什麼 and 錄影|什麼 and 錄音|什麼 and 實況|什麼 and 石礦|什麼 and 時況|用什麼 and 作影片|用什麼 and 做影片|用什麼 and 坐影片|用什麼 and 剪影片|用什麼 and 減影片|用什麼 and 出影片|用什麼 and 錄影片|用什麼 and 錄影|用什麼 and 錄音|用什麼 and 實況|用什麼 and 石礦|用什麼 and 時況',
+            'have' => '什麼 and 軟體|什么 and 录制|是什麼 and 作影片|是什麼 and 做影片|是什麼 and 坐影片|是什麼 and 剪影片|是什麼 and 減影片|是什麼 and 出影片|是什麼 and 錄影片|是什麼 and 錄影|是什麼 and 錄音|是什麼 and 實況|是什麼 and 石礦|是什麼 and 時況|什麼 and 作影片|什麼 and 做影片|什麼 and 坐影片|什麼 and 剪影片|什麼 and 減影片|什麼 and 出影片|什麼 and 錄影片|什麼 and 錄影|什麼 and 錄音|什麼 and 實況|什麼 and 石礦|什麼 and 時況|用什麼 and 作影片|用什麼 and 做影片|用什麼 and 坐影片|用什麼 and 剪影片|用什麼 and 減影片|用什麼 and 出影片|用什麼 and 錄影片|用什麼 and 錄影|用什麼 and 錄音|用什麼 and 實況|用什麼 and 石礦|用什麼 and 時況',
             'reply' => array(
                 '有關製作這 {game} 影片的相關資訊，請參考 lj.dsa.tw/qna.html 喔！ : )',
                 '這 {game} 影片使用的相關內容，請參考 lj.dsa.tw/qna.html 喔！ : )'
             )
         ),
         'whatGame' => array(
-            'have' => '是什麼 and 遊戲|叫什麼 and 遊戲',
+            'have' => '什么 and 游戏|神麼 and 遊戲|是什麼 and 遊戲|叫什麼 and 遊戲|遊戲 and 名稱',
             'without' => '模組|mod|下載點|網址',
             'reply' => array(
                 '這是 {game} 哦！ : )',
@@ -62,8 +77,8 @@ class Match
             )
         ),
         'whatModOrMap' => array(
-            'have' => '是什麼 and 模組|叫什麼 and 模組|是什麼 and 地圖|叫什麼 and 地圖|模組|地圖|甚麼 and 模組|鑽石 and 下載',
-            'without' => '',
+            'have' => '是什麼 and 模組|叫什麼 and 模組|是什麼 and 地圖|叫什麼 and 地圖|模組|地圖|甚麼 and 模組|鑽石 and 下載|哪裡 and 下載|lucky and box|lucky and block|模組 and 網址',
+            'without' => '遊戲',
             'reply' => array(
                 '{videoGame}'
             )
@@ -75,7 +90,7 @@ class Match
             )
         ),
         'sick' => array(
-            'have' => '早日康復|記得保暖|保重',
+            'have' => '阿飄 and 感冒|早日康復|記得保暖|保重',
             'reply' => array(
                 '謝謝！大家也要記得保暖喔！ : )'
             )
@@ -88,7 +103,7 @@ class Match
             )
         ),
         'faster' => array(
-            'have' => '還沒 and 出 and 片|趕快 and 出新|趕快 and 更新|趕快 and 上傳|趕快 and 拍|感快 and 出新|感快 and 更新|感快 and 上傳|感快 and 拍|敢快 and 出新|敢快 and 更新|敢快 and 上傳|敢快 and 拍|快點 and 出新|快點 and 更新|快點 and 上傳|快點 and 拍|馬上 and 出新|馬上 and 更新|馬上 and 上傳|馬上 and 拍|快点 and 更新|快点 and 出影片|早点 and 更新|早点 and 出影片',
+            'have' => '好久 and 沒出|更新 and 快一点|還沒 and 出 and 片|趕快 and 出新|趕快 and 更新|趕快 and 上傳|趕快 and 拍|感快 and 出新|感快 and 更新|感快 and 上傳|感快 and 拍|敢快 and 出新|敢快 and 更新|敢快 and 上傳|敢快 and 拍|快點 and 出新|快點 and 更新|快點 and 上傳|快點 and 拍|馬上 and 出新|馬上 and 更新|馬上 and 上傳|馬上 and 拍|快点 and 更新|快点 and 出影片|早点 and 更新|早点 and 出影片',
             'reply' => array(
                 '謝謝你喜歡我們的 {game}影片，我們會盡快出新的喔！',
                 '謝謝你喜歡我們的 {game}影片，我會盡量剪快點的！ : )',
@@ -96,7 +111,7 @@ class Match
             )
         ),
         'bgm' => array(
-            'have' => 'BGM and 求|BGM and 是什麼|BGM and 是啥|bgm and 求|bgm and 是什麼|bgm and 是啥|Bgm and 求|Bgm and 是什麼|Bgm and 是啥|BG and 求|BG and 是什麼|BG and 是啥|Bg and 求|Bg and 是什麼|Bg and 是啥|bg and 求|bg and 是什麼|bg and 是啥|音樂 and 求|音樂 and 是什麼|音樂 and 是啥|音乐 and 求|音乐 and 是什麼|音乐 and 是啥|開頭 and 求|開頭 and 是什麼|開頭 and 是啥',
+            'have' => '開頭 and 音樂|bgm|開頭 and 音乐|bdm and 是啥|片头 and 什么|開始 and 歌|背景 and 音樂|片前 and 音樂|片頭曲|開頭 and 好聽|BGM|開場 and 音樂|BGM and 求|BGM and 是什麼|BGM and 是啥|bgm and 求|bgm and 是什麼|bgm and 是啥|Bgm and 求|Bgm and 是什麼|Bgm and 是啥|BG and 求|BG and 是什麼|BG and 是啥|Bg and 求|Bg and 是什麼|Bg and 是啥|bg and 求|bg and 是什麼|bg and 是啥|音樂 and 求|音樂 and 是什麼|音樂 and 是啥|音乐 and 求|音乐 and 是什麼|音乐 and 是啥|開頭 and 求|開頭 and 是什麼|開頭 and 是啥',
             'reply' => array(
                 '有關這部 {game} 影片，音樂資訊請參考 lj.dsa.tw/qna.html 喔！ : )',
                 '這 {game} 影片的音樂可以在內 lj.dsa.tw/qna.html 找找喔！ : )',
@@ -109,11 +124,24 @@ class Match
                 '沒耶，我沒玩英雄聯盟'
             )
         ),
+        'full' => array(
+            'have' => '直播|完整|沒有剪|連續的|玩整版',
+            'reply' => array(
+                '謝謝你喜歡這 {game} 影片 : ) 但我們沒有推出完整版，也沒直播實況喔！ sorry'
+            )
+        ),
+        'love' => array(
+            'have' => 'love and 阿飄|阿飄 and 可愛|愛死 and 阿飄',
+            'reply' => array(
+                '好害羞喔！XD 感謝支持這部 {game} 阿！ : )',
+                '好害羞喔！感謝你喜歡這 {game} 阿 : )'
+            )
+        ),
         // 擴充位置
 
         // 感謝支持墊底驗證
         'funny' => array(
-            'have' => '我笑出來|肚子 and 痛|喜歡|很好看|好看|好玩|笑到|搞笑|訂閱|期待|支持 and 你|支持 and 妳|笑死|笑屎|好笑|有趣|永遠|訂閱|订阅|也蠻厲|蠻厲|超神|一個讚|讚啦|繼續拍|恭喜|忠實粉絲|你的 and 粉絲|太好看了|太棒了|哈哈哈',
+            'have' => '讚拉|出更多|很享受|XDDDDD|超有根|加油 and 支持|最愛看|喜欢|好愛 and 影片|我看 and 笑|笑倒|哈哈|太好了|飄是 and 學習|笑翻了|重複 and 看|超愛你|good|Ya and 新|ya and 新|好開心|我笑出來|肚子 and 痛|喜歡|很好看|好看|好玩|笑到|搞笑|訂閱|期待|支持 and 你|支持 and 妳|笑死|笑屎|好笑|有趣|永遠|訂閱|订阅|也蠻厲|蠻厲|超神|一個讚|讚啦|繼續拍|恭喜|忠實粉絲|你的 and 粉絲|太好看了|太棒了|哈哈哈',
             'without' => '不喜歡|討厭|很煩', //隨回應增加
             'reply' => array(
                 '太太太感謝妳支持啦！也謝謝你喜歡這 {game} 影片！ : )',
@@ -131,7 +159,9 @@ class Match
         'Payday' => 'Payday|payday|劫薪日',
         '瑪奇英雄傳' => '瑪奇英雄傳|瑪英|馬英',
         '詭異音樂' => '【阿飄崩壞】飄笨|Minecraft funny moment chicken remix song|一分鐘回兩千則留言的方法。',
-        '愚人節' => '愚人節'
+        '愚人節' => '愚人節',
+        'cso' => 'cso|CSO|CSo',
+        '爆爆王' => '爆爆王|淡水阿給|BNB'
     );
 
     public $gameTypeMapping = array(
