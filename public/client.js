@@ -17,7 +17,8 @@ var ljComment = {
     ljUI: {
         styleId: "ljStyle",
         autoCreatePrefix: "reply_",
-        nowOpenCommentId: 0
+        nowOpenCommentId: 0,
+        initState: false
     }
 };
 
@@ -62,7 +63,11 @@ ljComment.ljUI.addEvent = function () {
         var comment = commentList[index];
 
         ljComment.ljUI.openReplyBox(comment, index);
-        ljComment.ljUI.addAutoReplyBox(comment, index);
+
+        if (! ljComment.ljUI.initState)
+        {
+            ljComment.ljUI.addAutoReplyBox(comment, index);
+        }
 
         var name = comment.getAttribute(ljComment.youtubeUI.commentByAttr);
         var video = (comment.getElementsByClassName(ljComment.youtubeUI.commentVideoClass)[0] || {innerText: ""}).innerText;
@@ -111,6 +116,8 @@ ljComment.ljUI.addAutoReplyBox = function (dom, id) {
 ljComment.init = function () {
     ljComment.ljUI.addStyle();
     ljComment.ljUI.addEvent();
+
+    ljComment.ljUI.initState = true;
 };
 
 ljComment.init();
