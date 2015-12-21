@@ -16,6 +16,13 @@ class Match
             ),
         ),
 
+        'sameVideo' => array(
+            'have' => '這集 and 似曾相似|重複 and 影片|以前有 and 過|這是 and 以前的 and 影片|之前 and 影片|看過了|一模一樣|這好像看過|之前 and 播過',
+            'reply' => array(
+                '因為我真的覺得這部滿好笑的，可惜以前不太會剪影片。所以現在重弄了一變。 : )'
+            )
+        ),
+
         'whatTimeUpdate' => array(
             'have' => '什麼 and 時候 and 出新|時候 and 在初|時候 and 在出|時候 and 再出|時候 and 再初',
             'reply' => array(
@@ -33,6 +40,13 @@ class Match
             )
         ),
 
+        'xmax' => array(
+            'have' => '圣诞|聖誕',
+            'reply' => array(
+                '謝謝！也祝你聖誕快樂！ : )'
+            )
+        ),
+
         'isTaiwan' => array(
             'have' => '台湾 and 吗',
             'reply' => array(
@@ -41,7 +55,7 @@ class Match
         ),
 
         'more' => array(
-            'have' => '再看 and 久|可以 and 多點|放 and 多點|可以 and 在拍|可以 and 多拍|多拍點|多出點',
+            'have' => '再出|再看 and 久|可以 and 多點|放 and 多點|可以 and 在拍|可以 and 多拍|多拍點|多出點',
             'reply' => array(
                 '謝謝你喜歡這 {game} 影片，我們會多出點喔！感謝支持！'
             )
@@ -84,7 +98,7 @@ class Match
             )
         ),
         'whatModOrMap' => array(
-            'have' => '什么 and 模组|MOD?|mod?|Mod?|什么 and mod|mod and 甚麼|mod and 下载|時麼 and 插件|是什麼 and 模組|叫什麼 and 模組|是什麼 and 地圖|叫什麼 and 地圖|模組|地圖|甚麼 and 模組|鑽石 and 下載|哪裡 and 下載|lucky and box|lucky and block|模組 and 網址|Mod and 什麼',
+            'have' => '啥魔組|載點|宰點|什么 and 模组|MOD?|mod?|Mod?|什么 and mod|mod and 甚麼|mod and 下载|時麼 and 插件|是什麼 and 模組|叫什麼 and 模組|是什麼 and 地圖|叫什麼 and 地圖|模組|地圖|甚麼 and 模組|鑽石 and 下載|哪裡 and 下載|lucky and box|lucky and block|模組 and 網址|Mod and 什麼',
             'without' => '遊戲',
             'reply' => array(
                 '{videoGame}'
@@ -126,7 +140,7 @@ class Match
             )
         ),
         'bgm' => array(
-            'have' => '开头曲|開頭 and 音樂|bgm|開頭 and 音乐|bdm and 是啥|片头 and 什么|開始 and 歌|背景 and 音樂|片前 and 音樂|片頭曲|開頭 and 好聽|BGM|開場 and 音樂|BGM and 求|BGM and 是什麼|BGM and 是啥|bgm and 求|bgm and 是什麼|bgm and 是啥|Bgm and 求|Bgm and 是什麼|Bgm and 是啥|BG and 求|BG and 是什麼|BG and 是啥|Bg and 求|Bg and 是什麼|Bg and 是啥|bg and 求|bg and 是什麼|bg and 是啥|音樂 and 求|音樂 and 是什麼|音樂 and 是啥|音乐 and 求|音乐 and 是什麼|音乐 and 是啥|開頭 and 求|開頭 and 是什麼|開頭 and 是啥',
+            'have' => 'OP and 是什麼|歌是什么|开头歌|开头曲|開頭 and 音樂|bgm|開頭 and 音乐|bdm and 是啥|片头 and 什么|開始 and 歌|背景 and 音樂|片前 and 音樂|片頭曲|開頭 and 好聽|BGM|開場 and 音樂|BGM and 求|BGM and 是什麼|BGM and 是啥|bgm and 求|bgm and 是什麼|bgm and 是啥|Bgm and 求|Bgm and 是什麼|Bgm and 是啥|BG and 求|BG and 是什麼|BG and 是啥|Bg and 求|Bg and 是什麼|Bg and 是啥|bg and 求|bg and 是什麼|bg and 是啥|音樂 and 求|音樂 and 是什麼|音樂 and 是啥|音乐 and 求|音乐 and 是什麼|音乐 and 是啥|開頭 and 求|開頭 and 是什麼|開頭 and 是啥',
             'reply' => array(
                 '有關這部 {game} 影片，音樂資訊請參考 lj.dsa.tw/qna.html 喔！ : )',
                 '這 {game} 影片的音樂可以在內 lj.dsa.tw/qna.html 找找喔！ : )',
@@ -154,7 +168,7 @@ class Match
         ),
 
         'kevinYoutube' => array(
-            'have' => '笨笨 and y兔|kevin and y兔|Kevin and y兔|Kevin and Youtube|Kevin and youtube|Kevin and u2|Kevin and U2|Kevin and 頻道|Kevin and 频道|笨笨 and Youtube|笨笨 and youtube|笨笨 and u2|笨笨 and U2|笨笨 and 頻道|笨笨 and 频道',
+            'have' => '笨笨 and 開台|笨笨 and y兔|kevin and y兔|Kevin and y兔|Kevin and Youtube|Kevin and youtube|Kevin and u2|Kevin and U2|Kevin and 頻道|Kevin and 频道|笨笨 and Youtube|笨笨 and youtube|笨笨 and u2|笨笨 and U2|笨笨 and 頻道|笨笨 and 频道',
             'reply' => array(
                 '他目前沒有自己開設頻道喔！ : )'
             )
@@ -171,7 +185,7 @@ class Match
 
         // 感謝支持墊底驗證
         'funny' => array(
-            'have' => '笑得 and 肚子|爱看 and 阿飘|百看不膩|訂閲|讚拉|出更多|很享受|XDDDDD|超有根|加油 and 支持|最愛看|喜欢|好愛 and 影片|我看 and 笑|笑倒|哈哈|太好了|飄是 and 學習|笑翻了|重複 and 看|超愛你|good|Ya and 新|ya and 新|好開心|我笑出來|肚子 and 痛|喜歡|很好看|好看|好玩|笑到|搞笑|訂閱|期待|支持 and 你|支持 and 妳|笑死|笑屎|好笑|有趣|永遠|訂閱|订阅|也蠻厲|蠻厲|超神|一個讚|讚啦|繼續拍|恭喜|忠實粉絲|你的 and 粉絲|太好看了|太棒了|哈哈哈',
+            'have' => 'nice|超爆笑|笑得 and 肚子|爱看 and 阿飘|百看不膩|訂閲|讚拉|出更多|很享受|XDDDDD|超有根|加油 and 支持|最愛看|喜欢|好愛 and 影片|我看 and 笑|笑倒|哈哈|太好了|飄是 and 學習|笑翻了|重複 and 看|超愛你|good|Ya and 新|ya and 新|好開心|我笑出來|肚子 and 痛|喜歡|很好看|好看|好玩|笑到|搞笑|訂閱|期待|支持 and 你|支持 and 妳|笑死|笑屎|好笑|有趣|永遠|訂閱|订阅|也蠻厲|蠻厲|超神|一個讚|讚啦|繼續拍|恭喜|忠實粉絲|你的 and 粉絲|太好看了|太棒了|哈哈哈',
             'without' => '不喜歡|討厭|很煩', //隨回應增加
             'reply' => array(
                 '太太太感謝妳支持啦！也謝謝你喜歡這 {game} 影片！ : )',
@@ -260,7 +274,7 @@ class Match
         }
         
         // 都沒吻合
-        return "not found!";
+        return "謝謝！ : )";
     }
 
     public function putMethodsWord($message)
