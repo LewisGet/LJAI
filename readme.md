@@ -23,3 +23,9 @@ n.setAttribute('language', 'JavaScript');
 n.setAttribute('src', 'http://127.0.0.1:8000/scroll.js?rand=' + new Date().getTime());
 document.body.appendChild(n);
 ```
+
+# Flush reply
+
+```js
+ljComment.ljUI.addEvent();
+```
